@@ -1,5 +1,0 @@
-package Graphs
-
-class WeightedGraph {
-
-}
