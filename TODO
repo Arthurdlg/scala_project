@@ -1,4 +1,4 @@
-Faire 2 unique class Directed et Undirected pour les graphs et les edges ? 
-    prendre en compte si cest un weighted ou non
+pour les directed graphs
+    ajouter 2 function incomongneightbour et outgoingneightbour.
     
 Faire les test unitaires pour les classes graphs

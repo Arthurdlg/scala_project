@@ -1,4 +1,4 @@
-package fr.efrei.graphlibrary
+package fr.efrei.graphslibrary
 
 @main
 def main(): Unit = {
