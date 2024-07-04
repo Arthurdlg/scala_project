@@ -1,5 +1,4 @@
-package operations
-
+package fr.efrei.graphlibrary.operations
 
 def topologicalSort[V](graph: Graphs.Graph[V, _]): List[V] = {
   def visit(node: V, visited: Set[V], stack: List[V]): (Set[V], List[V]) = {

@@ -1,5 +1,4 @@
-package operations
-
+package fr.efrei.graphlibrary.operations
 
 def hasCycle[V](graph: Graphs.Graph[V, _]): Boolean = {
   def visit(node: V, visited: Set[V], recStack: Set[V]): Boolean = {

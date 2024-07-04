@@ -1,4 +1,4 @@
-package operations
+package fr.efrei.graphlibrary.operations
 
 def bfs[V](graph: Graphs.Graph[V, _], start: V): List[V] = {
   @annotation.tailrec

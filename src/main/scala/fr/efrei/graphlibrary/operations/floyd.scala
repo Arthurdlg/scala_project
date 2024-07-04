@@ -1,4 +1,4 @@
-package operations
+package fr.efrei.graphlibrary.operations
 
 def floydWarshall[V](graph: Graphs.WeightedGraph[V]): Map[(V, V), Double] = {
   val vertices = graph.vertices

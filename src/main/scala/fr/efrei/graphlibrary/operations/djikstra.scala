@@ -1,5 +1,4 @@
-package operations
-
+package fr.efrei.graphlibrary.operations
 
 def dijkstra[V](graph: WeightedGraph[V], source: V, ): Map[V, Double] = {
   val dist = collection.mutable.Map[V, Double](source -> 0.0)

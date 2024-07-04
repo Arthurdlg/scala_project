@@ -1,4 +1,4 @@
-package operations
+package fr.efrei.graphlibrary.operations
 
 def dfs[V](graph: Graphs.Graph[V, _], start: V): List[V] = {
   def dfsRecursive(v: V, visited: Set[V]): List[V] = {
