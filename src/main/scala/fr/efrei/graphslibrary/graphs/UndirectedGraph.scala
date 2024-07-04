@@ -3,7 +3,7 @@ package fr.efrei.graphslibrary.graphs
 import fr.efrei.graphslibrary.edges
 import fr.efrei.graphslibrary.edges.UndirectedEdge
 
-class UndirectedGraph[V, E <: UndirectedEdge[V]](val vertices: Set[V], val edges: Set[E]) {
+class UndirectedGraph[V, E <: UndirectedEdge[V]](val vertices: Set[V], val edges: Set[E])  extends Graph[V, E] {
 
   // Method to Get all vertices
   def getAllVertices: Set[V] = vertices
@@ -31,7 +31,3 @@ class UndirectedGraph[V, E <: UndirectedEdge[V]](val vertices: Set[V], val edges
     s"Vertices: ${vertices.mkString(", ")}\nEdges: ${edges.mkString(", ")}"
   }
 }
-
-//object UndirectedGraph {
-//  def empty[V, E <: UndirectedEdge[V]]: UndirectedGraph[V, E] = new UndirectedGraph[V, E](Set.empty, Set.empty)
-//}

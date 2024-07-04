@@ -3,7 +3,7 @@ package fr.efrei.graphslibrary.graphs
 import fr.efrei.graphslibrary.edges
 import fr.efrei.graphslibrary.edges.WeightedUndirectedEdge
 
-class WeightedUndirectedGraph[V, E <: WeightedUndirectedEdge[V]](val vertices: Set[V], val edges: Set[E]) {
+class WeightedUndirectedGraph[V, E <: WeightedUndirectedEdge[V]](val vertices: Set[V], val edges: Set[E])  extends Graph[V, E] {
 
   // Method to Get all vertices
   def getAllVertices: Set[V] = vertices
@@ -32,6 +32,3 @@ class WeightedUndirectedGraph[V, E <: WeightedUndirectedEdge[V]](val vertices: S
   }
 }
 
-//object WeightedUndirectedGraph {
-//  def empty[V, E <: WeightedUndirectedEdge[V]]: WeightedUndirectedGraph[V, E] = new WeightedUndirectedGraph[V, E](Set.empty, Set.empty)
-//}

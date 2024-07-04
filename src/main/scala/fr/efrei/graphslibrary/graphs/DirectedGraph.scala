@@ -3,7 +3,7 @@ package fr.efrei.graphslibrary.graphs
 import fr.efrei.graphslibrary.edges
 import fr.efrei.graphslibrary.edges.DirectedEdge
 
-class DirectedGraph[V, E <: DirectedEdge[V]](val vertices: Set[V], val edges: Set[E]) {
+class DirectedGraph[V, E <: DirectedEdge[V]](val vertices: Set[V], val edges: Set[E]) extends Graph[V, E]{
 
   // Method to Get all vertices
   def getAllVertices: Set[V] = vertices
@@ -11,18 +11,10 @@ class DirectedGraph[V, E <: DirectedEdge[V]](val vertices: Set[V], val edges: Se
   // Method to Get all edges
   def getAllEdges: Set[E] = edges
 
-  // Method to Get incoming neighbors of a given vertex
-  def incomingNeighbors(vertex: V): Set[V] = edges.collect{
-    case edge if edge.to == vertex => edge.from
-  }
-
-  // Method to Get outgoing neighbors of a given vertex
-  def outgoingNeighbors(vertex: V): Set[V] = edges.collect {
+  // Method to Get neighbors of a given vertex
+  def neighbors(vertex: V): Set[V] = edges.collect {
     case edge if edge.from == vertex => edge.to
   }
-
-  // Method to Get neighbors of a given vertex
-  def neighbors(vertex: V): Set[V] = outgoingNeighbors(vertex) ++ incomingNeighbors(vertex)
 
   // Method to Add an edge
   def addEdge(edge: E): DirectedGraph[V, E] = {
@@ -39,6 +31,3 @@ class DirectedGraph[V, E <: DirectedEdge[V]](val vertices: Set[V], val edges: Se
   }
 }
 
-//object DirectedGraph {
-//  def empty[V, E <: DirectedEdge[V]]: DirectedGraph[V, E] = new DirectedGraph[V, E](Set.empty, Set.empty)
-//}

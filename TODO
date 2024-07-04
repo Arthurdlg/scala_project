@@ -1,4 +1,19 @@
-pour les directed graphs
-    ajouter 2 function incomongneightbour et outgoingneightbour.
-    
-Faire les test unitaires pour les classes graphs
+JSON
+Graphviz
+All Operations
+    DFS faire les weighted
+    BFS
+    Topological Sort
+    Cycle detection
+    Floyd
+    Dijkstra
+Faire les unit testt des op
+    BFS
+    Topological Sort
+    Cycle detection
+    Floyd
+    Dijkstra
+
+ZIO 2 application
+
+Faire en sorte de ne pas pouvoir avoir 2 fois la meme arrete
