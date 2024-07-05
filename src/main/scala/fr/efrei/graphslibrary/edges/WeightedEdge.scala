@@ -1,5 +1,7 @@
 package fr.efrei.graphslibrary.edges
 
-trait Weight {
+trait WeightedEdge[V] {
+  def node1 : V
+  def node2 : V
   def weight: Double
 }

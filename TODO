@@ -1,18 +1,24 @@
 JSON
 Graphviz
 All Operations
-    DFS faire les weighted
-    BFS
     Topological Sort
     Cycle detection
     Floyd
     Dijkstra
+
+    faire les cas des weighted ?
+        DFS
+        BFS
+
 Faire les unit testt des op
-    BFS
     Topological Sort
     Cycle detection
     Floyd
     Dijkstra
+
+    faire les cas des weighted ?
+            DFS
+            BFS
 
 ZIO 2 application
 

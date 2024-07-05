@@ -60,7 +60,7 @@ Different types of graphs include:
 
 
 
-    
+
 
 #### JSON Encoding/Decoding
 
@@ -142,7 +142,7 @@ State management involves maintaining and manipulating state (data) throughout t
 - **Documentation**: Explain your implementation choice in the README, discussing the consequences and options for a
   more complex application.
 
-### 4. Optional Feature
+<!-- ### 4. Optional Feature
 
 #### Logging
 
@@ -150,7 +150,7 @@ Logging is the process of recording information about a program's execution, use
 
 - **Task**: Add logging support to the implemented operations.
 - **Requirement**: Ensure logging is implemented in a functional way, preserving expected characteristics.
-- **Documentation**: Discuss your logging implementation in the README.
+- **Documentation**: Discuss your logging implementation in the README. -->
 
 ## Project Organization
 
