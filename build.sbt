@@ -6,5 +6,6 @@ lazy val root = (project in file("."))
   .settings(
     name := "Scala_project",
     libraryDependencies ++= Seq("org.scalatest" %% "scalatest" % "3.2.19" % "test"),
-    libraryDependencies ++= Seq("org.scalatest" %% "scalatest-flatspec" % "3.2.19" % "test")
-  )
+    libraryDependencies ++= Seq("org.scalatest" %% "scalatest-flatspec" % "3.2.19" % "test"),
+    libraryDependencies ++= Seq("dev.zio" %% "zio-json" % "0.2.0")
+)
