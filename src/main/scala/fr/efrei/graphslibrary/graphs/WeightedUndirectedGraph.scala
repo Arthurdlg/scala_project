@@ -19,7 +19,7 @@ class WeightedUndirectedGraph[V, E <: WeightedUndirectedEdge[V]](val vertices: S
 
   // Method to Add an edge
   def addEdge(edge: E): WeightedUndirectedGraph[V, E] = {
-    new WeightedUndirectedGraph(vertices, edges + edge)
+    new WeightedUndirectedGraph(vertices + edge.node1 + edge.node2, edges + edge)
   }
 
   // Method to Remove an edge

@@ -1,6 +1,6 @@
 //package fr.efrei.graphlibrary.operations
 //
-//def floydWarshall[V](graph: Graphs.WeightedGraph[V]): Map[(V, V), Double] = {
+//def FloydWarshall[V](graph: Graphs.WeightedGraph[V]): Map[(V, V), Double] = {
 //  val vertices = graph.vertices
 //  val dist = collection.mutable.Map((for {
 //    u <- vertices

@@ -18,7 +18,7 @@ class WeightedDirectedGraph[V, E <: WeightedDirectedEdge[V]](val vertices: Set[V
   
   // Method to Add an edge
   def addEdge(edge: E): WeightedDirectedGraph[V, E] = {
-    new WeightedDirectedGraph(vertices, edges + edge)
+    new WeightedDirectedGraph(vertices + edge.from + edge.to, edges + edge)
   }
 
   // Method to Remove an edge

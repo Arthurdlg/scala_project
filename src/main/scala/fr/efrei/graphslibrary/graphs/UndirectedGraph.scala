@@ -24,7 +24,7 @@ class UndirectedGraph[V, E <: UndirectedEdge[V]](val vertices: Set[V], val edges
 
   // Method to Remove an edge
   def removeEdge(edge: E): UndirectedGraph[V, E] = {
-    new UndirectedGraph(vertices, edges - edge)
+    new UndirectedGraph(vertices + edge.node1 + edge.node2, edges - edge)
   }
 
   override def toString: String = {

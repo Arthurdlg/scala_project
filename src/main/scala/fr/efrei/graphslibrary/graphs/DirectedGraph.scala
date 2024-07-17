@@ -18,7 +18,7 @@ class DirectedGraph[V, E <: DirectedEdge[V]](val vertices: Set[V], val edges: Se
 
   // Method to Add an edge
   def addEdge(edge: E): DirectedGraph[V, E] = {
-    new DirectedGraph(vertices, edges + edge)
+    new DirectedGraph(vertices + edge.from + edge.to, edges + edge)
   }
 
   // Method to Remove an edge
