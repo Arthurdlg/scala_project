@@ -52,26 +52,23 @@ class FloydWarshallUnitTest extends AnyFlatSpec with Matchers {
     fwResult shouldEqual expected
   }
 
-//  "FloydWarshall" should "return empty map on unsupported graph types" in {
-//    val directedGraph: DirectedGraph[Int, DirectedEdge[Int]] = new DirectedGraph(Set(1, 2, 3, 4), Set(
-//      DirectedEdge(1, 2),
-//      DirectedEdge(2, 3),
-//      DirectedEdge(3, 4),
-//      DirectedEdge(4, 1)
-//    ))
-//
-//    val expectedDirected = Map.empty[(Any, Any), Double]
-//    val fwResultDirected = FloydWarshall(directedGraph)
-//    fwResultDirected shouldEqual expectedDirected
-//
-//    val undirectedGraph: UndirectedGraph[Int, UndirectedEdge[Int]] = new UndirectedGraph(Set(1, 2, 3, 4), Set(
-//      UndirectedEdge(1, 2),
-//      UndirectedEdge(2, 3),
-//      UndirectedEdge(3, 4),
-//      UndirectedEdge(4, 1)
-//    ))
-//    val expectedUndirected = Map.empty[(Int, Int), Double]
-//    val fwResultUndirected = FloydWarshall(undirectedGraph)
-//    fwResultUndirected shouldEqual expectedUndirected
-//  }
+  "FloydWarshall" should "return nil on unsupported graph types" in {
+    val directedGraph: DirectedGraph[Int, DirectedEdge[Int]] = new DirectedGraph(Set(1, 2, 3, 4), Set(
+      DirectedEdge(1, 2),
+      DirectedEdge(2, 3),
+      DirectedEdge(3, 4),
+      DirectedEdge(4, 1)
+    ))
+    val fwResultDirected = FloydWarshall(directedGraph)
+    fwResultDirected shouldEqual Map.empty
+
+    val undirectedGraph: UndirectedGraph[Int, UndirectedEdge[Int]] = new UndirectedGraph(Set(1, 2, 3, 4), Set(
+      UndirectedEdge(1, 2),
+      UndirectedEdge(2, 3),
+      UndirectedEdge(3, 4),
+      UndirectedEdge(4, 1)
+    ))
+    val fwResultUndirected = FloydWarshall(undirectedGraph)
+    fwResultUndirected shouldEqual Map.empty
+  }
 }
