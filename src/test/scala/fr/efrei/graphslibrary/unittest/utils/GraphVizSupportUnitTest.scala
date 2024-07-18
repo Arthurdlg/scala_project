@@ -1,4 +1,4 @@
-package fr.efrei.graphslibrary.utils
+package fr.efrei.graphslibrary.unittest.utils
 
 import fr.efrei.graphslibrary.graphs.Graph
 import fr.efrei.graphslibrary.edges.Edge
@@ -6,8 +6,6 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 class GraphVizSupportSpec extends AnyFlatSpec with Matchers {
-  import GraphVizSupport._
-
   "GraphVizSupport" should "convert a graph to GraphViz format" in {
     // Mock classes for testing
     case class TestEdge(node1: String, node2: String) extends Edge[String]
