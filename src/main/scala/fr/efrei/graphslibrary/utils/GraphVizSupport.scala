@@ -1,32 +1,55 @@
 package fr.efrei.graphslibrary.utils
 
-import fr.efrei.graphslibrary.graphs.Graph
-import fr.efrei.graphslibrary.edges.Edge
-import org.scalatest.flatspec.AnyFlatSpec
-import org.scalatest.matchers.should.Matchers
+import fr.efrei.graphslibrary.graphs._
+import fr.efrei.graphslibrary.edges._
 
-class GraphVizSupportSpec extends AnyFlatSpec with Matchers {
-  import GraphVizSupport._
+object GraphVizSupport {
 
-  "GraphVizSupport" should "convert a graph to GraphViz format" in {
-    // Mock classes for testing
-    case class TestEdge(node1: String, node2: String) extends Edge[String]
-    case class TestGraph(vertices: Set[String], edges: Set[TestEdge]) extends Graph[String, TestEdge] {
-      def getAllVertices: Set[String] = vertices
-      def getAllEdges: Set[TestEdge] = edges
-      def neighbors(vertex: String): Set[String] = Set()
-      def addEdge(edge: TestEdge): Graph[String, TestEdge] = this
-      def removeEdge(edge: TestEdge): Graph[String, TestEdge] = this
+  implicit class GraphVizOps[V, E <: UndirectedEdge[V]](graph: UndirectedGraph[V, E]) {
+    def toGraphViz: String = {
+      val sb = new StringBuilder
+      sb.append("graph G {\n")
+      graph.edges.foreach { edge =>
+        sb.append(s"  ${edge.node1} -- ${edge.node2};\n")
+      }
+      sb.append("}\n")
+      sb.toString()
     }
+  }
 
-    val graph = TestGraph(Set("A", "B"), Set(TestEdge("A", "B")))
+  implicit class DirectedGraphVizOps[V, E <: DirectedEdge[V]](graph: DirectedGraph[V, E]) {
+    def toGraphViz: String = {
+      val sb = new StringBuilder
+      sb.append("digraph G {\n")
+      graph.edges.foreach { edge =>
+        sb.append(s"  ${edge.from} -> ${edge.to};\n")
+      }
+      sb.append("}\n")
+      sb.toString()
+    }
+  }
 
-    val graphViz = graph.toGraphViz
+  implicit class WeightedGraphVizOps[V, E <: WeightedUndirectedEdge[V]](graph: WeightedUndirectedGraph[V, E]) {
+    def toGraphViz: String = {
+      val sb = new StringBuilder
+      sb.append("graph G {\n")
+      graph.edges.foreach { edge =>
+        sb.append(s"  ${edge.node1} -- ${edge.node2} [label=${edge.weight}];\n")
+      }
+      sb.append("}\n")
+      sb.toString()
+    }
+  }
 
-    graphViz should include ("digraph G {")
-    graphViz should include ("""  "A";""")
-    graphViz should include ("""  "B";""")
-    graphViz should include ("""  "A" -> "B";""")
-    graphViz should include ("}")
+  implicit class WeightedDirectedGraphVizOps[V, E <: WeightedDirectedEdge[V]](graph: WeightedDirectedGraph[V, E]) {
+    def toGraphViz: String = {
+      val sb = new StringBuilder
+      sb.append("digraph G {\n")
+      graph.edges.foreach { edge =>
+        sb.append(s"  ${edge.from} -> ${edge.to} [label=${edge.weight}];\n")
+      }
+      sb.append("}\n")
+      sb.toString()
+    }
   }
 }
