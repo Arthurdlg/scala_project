@@ -5,7 +5,7 @@ import fr.efrei.graphslibrary.edges.Edge
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-class GraphVizSupportUnitTest extends AnyFlatSpec with Matchers {
+class GraphVizSupportSpec extends AnyFlatSpec with Matchers {
   "GraphVizSupport" should "convert a graph to GraphViz format" in {
     // Mock classes for testing
     case class TestEdge(node1: String, node2: String) extends Edge[String]
@@ -19,12 +19,12 @@ class GraphVizSupportUnitTest extends AnyFlatSpec with Matchers {
 
     val graph = TestGraph(Set("A", "B"), Set(TestEdge("A", "B")))
 
-    val graphViz = GraphVizSupport.toGraphViz(graph)
+    val graphViz = graph.toGraphViz
 
     graphViz should include ("digraph G {")
-    graphViz should include ("  \"A\";")
-    graphViz should include ("  \"B\";")
-    graphViz should include ("  \"A\" -> \"B\";")
+    graphViz should include ("""  "A";""")
+    graphViz should include ("""  "B";""")
+    graphViz should include ("""  "A" -> "B";""")
     graphViz should include ("}")
   }
 }
